@@ -40,17 +40,20 @@ colourmaps = dict(zip(variables.values(), 4 * ["viridis"]))
 ```
 
 # A preview {.smaller background-image="images/detailed-weave.png" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
-The TL;DR;
+The TL;DR
 
 ## Where we are headed
 Two new kinds of thematic map for handling complex multivariate data associated with polygons.
 
 We've [developed python code](https://github.com/DOSull/weaving-space) that helps you make tiled and woven maps.
 
-::: aside
-Many of the maps we show are of Dan Exeter's index of multiple deprivation (IMD). See: Exeter DJ, Zhao J, Crengle S, Lee A, Browne M, 2017, [The New Zealand Indices of Multiple Deprivation (IMD): A new suite of indicators for social and health research in Aotearoa, New Zealand](https://dx.plos.org/10.1371/journal.pone.0181260) _PLOS ONE_ **12**(8) e0181260
-:::
+## Sources to map, think, and develop code with 
 
+- Dan Exeter et al.'s index of multiple deprivation (IMD). *Can maps help us find regions of stability in multidimensional data?*
+
+_"We identified 28 indicators of deprivation from national health, social development, taxation, education, police databases, geospatial data providers and the 2013 Census, all of which represented seven Domains of deprivation: Employment; Income; Crime; Housing; Health; Education; and Geographical Access. The IMD is the combination of these seven Domains. The Domains may be used individually or in combination, to explore the geography of deprivation and its association with a given health or social outcome."_
+
+- Exeter DJ, Zhao J, Crengle S, Lee A, Browne M, 2017, [The New Zealand Indices of Multiple Deprivation (IMD): A new suite of indicators for social and health research in Aotearoa, New Zealand](https://dx.plos.org/10.1371/journal.pone.0181260) _PLOS ONE_ **12**(8) e0181260
 
 ## {transition="slide-in none-out"}
 
