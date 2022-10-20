@@ -39,23 +39,42 @@ variables = dict(zip(list("abcd"), vars))
 colourmaps = dict(zip(variables.values(), 4 * ["viridis"]))
 ```
 
-# A preview {.smaller background-image="images/detailed-weave.png" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
-The TL;DR
+# What we are doing {.smaller background-image="images/detailed-weave.png" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
 
-## Where we are headed
-Two new kinds of thematic map for handling complex multivariate data associated with polygons.
+- Developing new multivariate thematic mapping techniques: Color Weaving and Tiling 
 
-We've [developed python code](https://github.com/DOSull/weaving-space) that helps you make tiled and woven maps.
+- [Developing python code (https://github.com/DOSull/weaving-space)](https://github.com/DOSull/weaving-space) that helps you make them.
 
-## Sources to map, think, and develop code with 
+- Making examples, which also helps us do the above.
 
-- Dan Exeter et al.'s index of multiple deprivation (IMD). *Can maps help us find regions of stability in multidimensional data?*
+# Other types of multivariate maps? {.smaller background-image="images/detailed-weave.png" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
 
-_"We identified 28 indicators of deprivation from national health, social development, taxation, education, police databases, geospatial data providers and the 2013 Census, all of which represented seven Domains of deprivation: Employment; Income; Crime; Housing; Health; Education; and Geographical Access. The IMD is the combination of these seven Domains. The Domains may be used individually or in combination, to explore the geography of deprivation and its association with a given health or social outcome."_
+This is a perennially challenging problem, so many different ways of tackling it have been attempted...
 
-- Exeter DJ, Zhao J, Crengle S, Lee A, Browne M, 2017, [The New Zealand Indices of Multiple Deprivation (IMD): A new suite of indicators for social and health research in Aotearoa, New Zealand](https://dx.plos.org/10.1371/journal.pone.0181260) _PLOS ONE_ **12**(8) e0181260
+##
+
+::: {.r-stack}
+![](images/small-multiples.png "Tufte recommends this approach"){.fragment .fade-out fragment-index=1 width="800"}
+
+![](images/bivariate-choropleth-stevens-qgis.png "2-colours, OK"){.fragment .fade-in-then-out fragment-index=1 width="800"}
+
+![](images/tricolore.png "3-colours, brown"){.fragment .fade-in-then-out fragment-index=2 width="800"}
+
+![](images/choropleth-with-symbols-qgis.png "Probably the most conventional option"){.fragment .fade-in-then-out fragment-index=3 width="800"}
+
+![](images/dorling-chernoff-faces.jpg "Probably the least conventional option"){.fragment .fade-in-then-out fragment-index=4 width="500"}
+
+![](images/dot-map.png "This approach is older than you might imagine, see Jenks GF, 1953, “‘Pointilism’ as a cartographic technique” The Professional Geographer 5(5) 4–6
+"){.fragment .fade-in fragment-index=5 width="800"}
+
+::: 
+
+# Previewing our methods' results
+
+A little more context for these was provided in [an earlier talk](https://dosull.github.io/weaving-space/NZCS-Nov-2021/make-weave-map.html) we gave at the New Zealand Cartographic Society meeting.
 
 ## {transition="slide-in none-out"}
+
 
 ```{python}
 tile_unit = TileUnit(tiling_type = "laves", code = "4.8.8",
@@ -82,43 +101,25 @@ fig = tiling.get_tiled_map(prioritise_tiles = True) \
           legend = False, figsize = (10, 7))
 ```
 
+## NACIS Anthromes Poster
 
-<!-- An earlier version of this section included these extra materials -->
+![](images/NACIS-2022-anthromes-poster-v5-background-color.png "NACIS Anthromes Poster")
 
-<!-- # Multivariate maps {.smaller background-image="images/detai
-led-weave.png" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
-Some background to the problem.
+## NACIS Anthromes Poster
 
-## But first... where we are headed
-Two new kinds of thematic map for handling complex multivariate data associated with polygons.
+![](images/NACIS-2022-poster-excerpt.png "NACIS Poster excerpt")
 
-We've [developed python code](https://github.com/DOSull/weaving-space) that helps you make tiled and woven maps.
 
-::: aside
-Many of the maps we show are of Dan Exeter's index of multiple deprivation (IMD). See: Exeter DJ, Zhao J, Crengle S, Lee A, Browne M, 2017, [The New Zealand Indices of Multiple Deprivation (IMD): A new suite of indicators for social and health research in Aotearoa, New Zealand](https://dx.plos.org/10.1371/journal.pone.0181260) _PLOS ONE_ **12**(8) e0181260
-::: 
+## Thematic Mapping that Bridges Spatial Analysis with Landscape Synthesis?
 
-## Some other approaches
-This is a perennially challenging problem, so many different ways of tackling it have been attempted...
+**Can maps help us find regions of stability and variation in multidimensional data?**
 
-A little more context for these was provided in [our earlier talk](https://dosull.github.io/weaving-space/NZCS-Nov-2021/make-weave-map.html).
+![](images/Midwest-COVID-Figure3c-excerpt.png "Midwest COVID")
 
-##
+## Thematic Mapping that Bridges Spatial Analysis with Landscape Synthesis?
 
-::: {.r-stack}
-![](images/small-multiples.png "Tufte recommends this approach"){.fragment .fade-out fragment-index=1 width="800"}
+![](images/Figure_4--model-bc-2022-01-29.png "Visualizing the geographies of poisson regression models"){.fragment .fade-in fragment-index=5 width="800"}
 
-![](images/bivariate-choropleth-stevens-qgis.png "2-colours, OK"){.fragment .fade-in-then-out fragment-index=1 width="800"}
-
-![](images/tricolore.png "3-colours, brown"){.fragment .fade-in-then-out fragment-index=2 width="800"}
-
-![](images/choropleth-with-symbols-qgis.png "Probably the most conventional option"){.fragment .fade-in-then-out fragment-index=3 width="800"}
-
-![](images/dorling-chernoff-faces.jpg "Probably the least conventional option"){.fragment .fade-in-then-out fragment-index=4 width="500"}
-
-![](images/dot-map.png "This approach is older than you might imagine, see Jenks GF, 1953, “‘Pointilism’ as a cartographic technique” The Professional Geographer 5(5) 4–6
-"){.fragment .fade-in fragment-index=5 width="800"}
-::: -->
 
 
 # Tiling theory {.smaller background-image="images/mosaic-south-america.jpg" background-opacity=0.65 style="text-shadow: 2px 2px 5px #ffc, -2px -2px 5px #ffc;"}
@@ -407,7 +408,7 @@ cairo_tile = cairo_tile.transform_scale(0.5, 0.5)
 ## Tiling a dataset
 `TileUnit`s and `WeaveUnit`s are both `Tileable` objects that can be used to make a `Tiling`.
 
-To make a `Tiling` we also need a polygon dataset to be tiled ~~and its unique ID variable~~.^[Not required in latest version of the code (10/2022)] 
+To make a `Tiling` we also need a polygon dataset to be tiled. 
 
 ```{python}
 #| echo: true
